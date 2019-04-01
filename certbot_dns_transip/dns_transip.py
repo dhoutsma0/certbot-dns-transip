@@ -137,7 +137,7 @@ class _TransipClient(object):
             raise errors.PluginError('Error adding TXT record using the Transip API: {0}'
                                      .format(e))
 
-    def del_txt_record(self, domain_name, record_name, record_content):
+    def del_txt_record(self, domain, record_name, record_content):
         """
         Delete a TXT record using the supplied information.
 
