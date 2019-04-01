@@ -172,7 +172,7 @@ class _TransipClient(object):
         except suds.WebFault as e:
             self.logger.error('Error while storing DNS records: %s', e)
 
-    def _get_dns_entries(self, domain, retries=3, backoff=5):
+    def _get_dns_entries(self, domain_name, retries=3, backoff=5):
         """
         Get all DNS entries for this domain.
 
