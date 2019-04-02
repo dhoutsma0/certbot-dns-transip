@@ -114,7 +114,7 @@ class _TransipClient(object):
             raise errors.PluginError('Error finding domain using the Transip API: {0}'
                                      .format(e))
 
-        domain_records = self.get_dns_entries(domain_name)
+        domain_records = self._get_dns_entries(domain_name)
 
         try:
             new_record = DnsEntry(
