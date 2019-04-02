@@ -156,7 +156,7 @@ class _TransipClient(object):
             self.logger.error('Error finding domain using the Transip API: %s', e)
             return
 
-        domain_records = self._get_dns_entries(domain_name=domain)
+        domain_records = self._get_dns_entries(domain=domain)
 
         matching_records = [record for record in domain_records
                             if record.type == 'TXT'
@@ -180,7 +180,7 @@ class _TransipClient(object):
         :raises certbot.errors.PluginError: if an error occurs communicating with the Transip
                                             API
         """
-        def _get_dns_entries_transip(self, domain):
+        def _get_dns_entries_transip(domain):
             try:
                 dns_entries = self.domain_service.get_info(domain_name=domain).dnsEntries
             except suds.WebFault as e:
